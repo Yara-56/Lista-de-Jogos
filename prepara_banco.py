@@ -6,9 +6,9 @@ print("Conectando...")
 try:
     # Tenta estabelecer uma conexão com o banco de dados
     conn = mysql.connector.connect(
-        host='127.0.0.1',  # Endereço do servidor MySQL
-        user='root',  # Nome de usuário do MySQL
-        password='1980'  # Senha do MySQL
+        host='#',  # Endereço do servidor MySQL
+        user='#',  # Nome de usuário do MySQL
+        password='#'  # Senha do MySQL
     )
 except mysql.connector.Error as err:
     # Trata possíveis erros de conexão
