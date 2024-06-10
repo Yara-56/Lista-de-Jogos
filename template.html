@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogoteca</title> <!-- Define o título da página -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"> <!-- Importa o arquivo CSS do Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}"> <!-- Importa o arquivo CSS personalizado -->
+</head>
+<body>
+<div class="container">
+
+    {% with messages = get_flashed_messages() %} <!-- Obtém as mensagens flash da sessão -->
+        {% if messages %}
+            <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li> <!-- Exibe as mensagens flash como alertas de sucesso -->
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div class="page-header">
+        <h1>{{ titulo }}</h1> <!-- Exibe o título da página -->
+    </div>
+
+    {% block conteudo %}{% endblock %} <!-- Inclui o conteúdo específico de cada página -->
+
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script> <!-- Importa o jQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script> <!-- Importa o arquivo JavaScript personalizado -->
+</div>
+</body>
+</html>
